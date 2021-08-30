@@ -81,10 +81,46 @@ const createSlide = () => {
     }
 }
 
-for (let i=0;i<3;i++) {
+for (let i=0;i<movies.length-1;i++) {
     createSlide();
 }
 
 setInterval(() => {
     createSlide();
 }, 3000);
+
+// Video Cards
+
+const videoCards = document.querySelectorAll('.video-card');
+
+videoCards.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        let video = item.children[1];
+        video.play();
+    })
+
+    item.addEventListener('mouseleave',() => {
+        let video = item.children[1];
+        video.pause();
+    })
+})
+
+
+//Card Sliders
+
+let cardContainer = document.querySelectorAll('card-container');
+let prebtns = document.querySelectorAll('.pre-btn');
+let nxtbtns = document.querySelectorAll('.nxt-btn');
+
+cardContainer.forEach((item,i)=> {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerwidth = containerDimensions.width();
+
+    nxtbtns[i].addEventListener('click', () => {
+        item.scrollLeft += containerwidth - 200;
+    })
+
+    prebtns[i].addEventListener('click', () => {
+        item.scrollLeft += containerwidth + 200;
+    })
+})
