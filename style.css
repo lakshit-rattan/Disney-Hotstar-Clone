@@ -424,8 +424,9 @@ body {
 
   .footer-basic {
     padding:20px 0;
-    background-color:#ffffff;
-    color:#4b4c4d;
+    background-color:#030b17;
+    color:#fff;
+    opacity: 0.8;
   }
   
   .footer-basic ul {
@@ -438,7 +439,7 @@ body {
   }
   
   .footer-basic li {
-    padding:0 10spx;
+    padding:0 10px;
   }
   
   .footer-basic ul a {
@@ -477,7 +478,7 @@ body {
   .footer-basic .copyright {
     margin-top:15px;
     text-align:center;
-    font-size:13px;
+    font-size: 13px;
     color:#aaa;
     margin-bottom:0;
   }
