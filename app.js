@@ -87,7 +87,7 @@ for (let i=0;i<movies.length-1;i++) {
 
 setInterval(() => {
     createSlide();
-}, 3000);
+}, 5000);
 
 // Video Cards
 
@@ -108,19 +108,19 @@ videoCards.forEach(item => {
 
 //Card Sliders
 
-let cardContainer = document.querySelectorAll('card-container');
+let cardContainer = document.querySelectorAll('.card-container');
 let prebtns = document.querySelectorAll('.pre-btn');
 let nxtbtns = document.querySelectorAll('.nxt-btn');
 
 cardContainer.forEach((item,i)=> {
     let containerDimensions = item.getBoundingClientRect();
-    let containerwidth = containerDimensions.width();
+    let containerwidth = containerDimensions.width;
 
     nxtbtns[i].addEventListener('click', () => {
         item.scrollLeft += containerwidth - 200;
     })
 
     prebtns[i].addEventListener('click', () => {
-        item.scrollLeft += containerwidth + 200;
+        item.scrollLeft -= containerwidth + 200;
     })
 })
